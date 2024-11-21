@@ -200,7 +200,8 @@ class ConcentratedLiquidityMarket:
         # Update tick liquidities
         self.update_tick_liquidities(tick_l, tick_u, kappa_tilde)
 
-        return x0, y0
+        return x0, y0, position_id
+
     
     def get_nearest_tick_price(self, price: float) -> float:
         """

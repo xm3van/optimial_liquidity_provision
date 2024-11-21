@@ -83,7 +83,7 @@ class TestConcentratedLiquidityMarket(unittest.TestCase):
         delta_u = 0.05
 
         # Deposit liquidity
-        x0, y0 = self.pool.deposit(lp_id=lp_id, wealth=initial_wealth, delta_l=delta_l, delta_u=delta_u)
+        x0, y0, _ = self.pool.deposit(lp_id=lp_id, wealth=initial_wealth, delta_l=delta_l, delta_u=delta_u)
         position_id = 1  # Assuming position IDs start from 1
         position = self.pool.active_lp_positions.get(position_id) or self.pool.inactive_lp_positions.get(position_id)
 
@@ -186,7 +186,7 @@ class TestConcentratedLiquidityMarket(unittest.TestCase):
         delta_l = 0.05
         delta_u = 0.05
 
-        x0, y0 = self.pool.deposit(lp_id=lp_id, wealth=wealth, delta_l=delta_l, delta_u=delta_u)
+        x0, y0, _ = self.pool.deposit(lp_id=lp_id, wealth=wealth, delta_l=delta_l, delta_u=delta_u)
 
         # Retrieve the position
         position = self.pool.active_lp_positions.get(1) or self.pool.inactive_lp_positions.get(1)
